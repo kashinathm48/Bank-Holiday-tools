@@ -1,0 +1,395 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Check bank holidays and bank status for different states in India." name="description"/>
+  <meta content="bank holidays, bank status, India, state holidays, national holidays" name="keywords"/>
+  <meta content="Your Name" name="author"/>
+  <title>
+   Bank Holidays in India
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js">
+  </script>
+ </head>
+ <body class="bg-gray-100">
+  <div class="min-h-screen">
+   <!-- Header -->
+   <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+     <h1 class="text-xl font-bold text-gray-900 mb-2 md:mb-0">
+      Bank Holidays in India
+     </h1>
+     <nav class="flex items-center space-x-4">
+      <a class="text-gray-600 hover:text-gray-900 px-2 py-1 text-sm md:text-base" href="index.html">
+       Home
+      </a>
+      <a class="text-gray-600 hover:text-gray-900 px-2 py-1 text-sm md:text-base" href="about.html">
+       About
+      </a>
+      <a class="text-gray-600 hover:text-gray-900 px-2 py-1 text-sm md:text-base" href="contact.html">
+       Contact
+      </a>
+     </nav>
+    </div>
+   </header>
+   <!-- Main Content -->
+   <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-0">
+     <!-- State Selection -->
+     <div class="mb-4 flex justify-between items-center">
+      <div class="text-gray-600">
+       Showing holidays for:
+      </div>
+      <select class="border rounded-md py-2 px-4" id="stateSelect" onchange="updateSelectedState(this.value)">
+       <option value="">
+        Select State
+       </option>
+      </select>
+     </div>
+     <!-- Current Status -->
+     <div class="bg-white shadow rounded-lg p-6 mb-6">
+      <div class="flex items-center space-x-4">
+       <i class="fas fa-calendar-alt text-gray-500">
+       </i>
+       <span class="text-lg font-medium text-gray-900" id="current-date">
+       </span>
+      </div>
+      <div class="mt-4">
+       <span class="font-medium text-gray-900">
+        Bank Status:
+       </span>
+       <span class="font-semibold px-2 py-1 rounded" id="bank-status">
+       </span>
+      </div>
+     </div>
+     <!-- Calendar View -->
+     <div class="bg-white shadow rounded-lg p-4" id="calendar-view">
+      <div class="flex justify-between items-center mb-4">
+       <button class="text-gray-600 hover:text-gray-900" onclick="changeMonth(-1)">
+        <i class="fas fa-chevron-left">
+        </i>
+       </button>
+       <span class="text-lg font-medium text-gray-900" id="current-month">
+       </span>
+       <button class="text-gray-600 hover:text-gray-900" onclick="changeMonth(1)">
+        <i class="fas fa-chevron-right">
+        </i>
+       </button>
+      </div>
+      <div class="grid grid-cols-7 gap-2 text-center text-gray-700" id="calendar-grid">
+      </div>
+     </div>
+     <!-- National Holidays Table -->
+     <div class="bg-white shadow rounded-lg p-4 mt-6">
+      <h2 class="text-lg font-medium text-gray-900 mb-4">
+       National Holidays
+      </h2>
+      <table class="min-w-full bg-white">
+       <thead>
+        <tr>
+         <th class="py-2 px-4 border-b">
+          Date
+         </th>
+         <th class="py-2 px-4 border-b">
+          Holiday
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          January 26, 2025
+         </td>
+         <td class="py-2 px-4 border-b">
+          Republic Day
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          August 15, 2025
+         </td>
+         <td class="py-2 px-4 border-b">
+          Independence Day
+         </td>
+        </tr>
+        <tr>
+         <td class="py-2 px-4 border-b">
+          October 2, 2025
+         </td>
+         <td class="py-2 px-4 border-b">
+          Gandhi Jayanti
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <!-- State Holidays Articles -->
+     <div class="bg-white shadow rounded-lg p-4 mt-6">
+      <h2 class="text-lg font-medium text-gray-900 mb-4">
+       State Holidays
+      </h2>
+      <div class="flex overflow-x-scroll space-x-4">
+       <article class="min-w-[300px] bg-gray-100 p-4 rounded-lg shadow">
+        <img alt="Image representing Netaji Subhas Chandra Bose Jayanti" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/n8ilYd8mgo7bqric29juk6ImBuXeJJUAy4dwOOuKGPw.jpg" width="300"/>
+        <h3 class="text-lg font-medium text-gray-900">
+         Netaji Subhas Chandra Bose Jayanti
+        </h3>
+        <p class="text-gray-600">
+         January 23, 2025
+        </p>
+        <a class="text-blue-500 hover:underline" href="state-holidays/wb-netaji-subhas-chandra-bose-jayanti.html">
+         Read more
+        </a>
+       </article>
+       <article class="min-w-[300px] bg-gray-100 p-4 rounded-lg shadow">
+        <img alt="Image representing Saraswati Puja" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/9wKWWGnkTqSMYRLmVJ-EMzTauedCjgOOmjyytgIlrG8.jpg" width="300"/>
+        <h3 class="text-lg font-medium text-gray-900">
+         Saraswati Puja
+        </h3>
+        <p class="text-gray-600">
+         January 29, 2025
+        </p>
+        <a class="text-blue-500 hover:underline" href="state-holidays/wb-saraswati-puja.html">
+         Read more
+        </a>
+       </article>
+       <article class="min-w-[300px] bg-gray-100 p-4 rounded-lg shadow">
+        <img alt="Image representing Poila Boishakh" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/JciDgRtAapEZf7HtpKFKeoRlZ83E-yFkQbmB4etw5lQ.jpg" width="300"/>
+        <h3 class="text-lg font-medium text-gray-900">
+         Poila Boishakh
+        </h3>
+        <p class="text-gray-600">
+         April 14, 2025
+        </p>
+        <a class="text-blue-500 hover:underline" href="state-holidays/wb-poila-boishakh.html">
+         Read more
+        </a>
+       </article>
+       <article class="min-w-[300px] bg-gray-100 p-4 rounded-lg shadow">
+        <img alt="Image representing Bengali Solar New Year" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/cKayF_5I1HeNOwE3YqVyLSMjcvYk7xT3m4Ze2W_eUlY.jpg" width="300"/>
+        <h3 class="text-lg font-medium text-gray-900">
+         Bengali Solar New Year
+        </h3>
+        <p class="text-gray-600">
+         April 15, 2025
+        </p>
+        <a class="text-blue-500 hover:underline" href="state-holidays/wb-bengali-solar-new-year.html">
+         Read more
+        </a>
+       </article>
+       <article class="min-w-[300px] bg-gray-100 p-4 rounded-lg shadow">
+        <img alt="Image representing Rabindranath Tagore Jayanti" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/ZxUHDjr2n4MbT9f-NCRhXvXISOJE1q735IdNZrXa1Vs.jpg" width="300"/>
+        <h3 class="text-lg font-medium text-gray-900">
+         Rabindranath Tagore Jayanti
+        </h3>
+        <p class="text-gray-600">
+         May 9, 2025
+        </p>
+        <a class="text-blue-500 hover:underline" href="state-holidays/wb-rabindranath-tagore-jayanti.html">
+         Read more
+        </a>
+       </article>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <script>
+   let currentDate = moment();
+        let currentState = 'WB'; // Default to West Bengal
+
+        const holidays = {
+            national: [
+                { date: '2025-01-26', name: 'Republic Day' },
+                { date: '2025-08-15', name: 'Independence Day' },
+                { date: '2025-10-02', name: 'Gandhi Jayanti' }
+            ],
+            states: {
+                WB: [
+                    { date: '2025-01-23', name: 'Netaji Subhas Chandra Bose Jayanti' },
+                    { date: '2025-01-29', name: 'Saraswati Puja' },
+                    { date: '2025-04-14', name: 'Poila Boishakh' },
+                    { date: '2025-04-15', name: 'Bengali Solar New Year' },
+                    { date: '2025-05-09', name: 'Rabindranath Tagore Jayanti' },
+                    { date: '2025-10-03', name: 'Maha Saptami' },
+                    { date: '2025-10-04', name: 'Maha Ashtami' },
+                    { date: '2025-10-05', name: 'Maha Navami' },
+                    { date: '2025-10-06', name: 'Vijaya Dashami' },
+                    { date: '2025-10-30', name: 'Kali Puja' },
+                    { date: '2025-10-31', name: 'Lakshmi Puja' },
+                    { date: '2025-11-02', name: 'Bhai Phonta' }
+                ]
+            }
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            populateStateDropdown();
+            updateStateDisplay();
+            generateCalendar(currentDate);
+            updateHolidayList();
+            updateDisplay();
+        });
+
+        function generateCalendar(date) {
+            const calendarGrid = document.getElementById('calendar-grid');
+            calendarGrid.innerHTML = '';
+            
+            // Weekday headers
+            ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].forEach(day => {
+                calendarGrid.innerHTML += `<div class="font-medium py-2">${day}</div>`;
+            });
+
+            const startDate = date.clone().startOf('month').startOf('week');
+            const endDate = date.clone().endOf('month').endOf('week');
+
+            while (startDate.isBefore(endDate)) {
+                const day = startDate.date();
+                const isCurrentMonth = startDate.month() === date.month();
+                const isToday = startDate.isSame(moment(), 'day');
+                const isHoliday = checkHoliday(startDate);
+                const isSunday = startDate.day() === 0;
+                const isClosedSaturday = isSaturdayClosed(startDate);
+
+                let dayClass = 'p-2 flex items-center justify-center';
+                let textClass = '';
+                let bgClass = '';
+                
+                if (isCurrentMonth) {
+                    if (isHoliday) {
+                        bgClass = 'bg-red-600';
+                    } else if (isToday) {
+                        bgClass = 'bg-blue-800';
+                    } else if (isSunday || isClosedSaturday) {
+                        textClass = 'text-red-500';
+                    }
+                } else {
+                    textClass = 'text-gray-400';
+                }
+
+                if (bgClass) {
+                    dayClass += ` ${bgClass} text-white rounded-full w-8 h-8`;
+                }
+
+                calendarGrid.innerHTML += `
+                    <div class="${dayClass}">
+                        <span class="${textClass}">${day}</span>
+                    </div>
+                `;
+
+                startDate.add(1, 'day');
+            }
+        }
+
+        function isSaturdayClosed(date) {
+            if (date.day() !== 6) return false;
+            const month = date.month();
+            const year = date.year();
+            const saturdays = [];
+            let current = moment([year, month, 1]);
+            
+            while (current.month() === month) {
+                if (current.day() === 6) saturdays.push(current.date());
+                current.add(1, 'day');
+            }
+            
+            const saturdayNumber = saturdays.indexOf(date.date()) + 1;
+            return saturdayNumber === 2 || saturdayNumber === 4;
+        }
+
+        function checkHoliday(date) {
+            return getStateHolidays().some(h => moment(h.date).isSame(date, 'day'));
+        }
+
+        function getHolidayType(date) {
+            return holidays.national.some(h => moment(h.date).isSame(date, 'day')) ? 'national' : 'state';
+        }
+
+        function updateDisplay() {
+            document.getElementById('current-date').textContent = moment().format('MMMM D, YYYY');
+            document.getElementById('current-month').textContent = currentDate.format('MMMM YYYY');
+            const status = getBankStatus();
+            document.getElementById('bank-status').textContent = status.text;
+            document.getElementById('bank-status').className = `font-semibold px-2 py-1 rounded ${status.class}`;
+        }
+
+        function getBankStatus() {
+            const now = moment();
+            if (checkHoliday(now)) return { text: 'Today the bank is closed (Holiday)', class: 'bg-red-600 text-white' };
+            if (now.day() === 0) return { text: 'Today the bank is closed (Sunday)', class: 'bg-red-300 text-white' };
+            if (isSaturdayClosed(now)) return { text: 'Today the bank is closed (Saturday)', class: 'bg-red-300 text-white' };
+            
+            return now.hour() >= 9 && now.hour() < 17 
+                ? { text: 'Today the bank is open', class: 'bg-green-500 text-white' }
+                : { text: 'Today the bank is closed', class: 'bg-gray-600 text-white' };
+        }
+
+        function changeMonth(offset) {
+            currentDate.add(offset, 'month');
+            generateCalendar(currentDate);
+            updateDisplay();
+            updateHolidayList();
+        }
+
+        function populateStateDropdown() {
+            const select = document.getElementById('stateSelect');
+            const states = {
+                'WB': 'West Bengal'
+            };
+            
+            Object.entries(states).forEach(([code, name]) => {
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = `${name} (${code})`;
+                select.appendChild(option);
+            });
+        }
+
+        function updateSelectedState(state) {
+            currentState = state;
+            updateStateDisplay();
+            generateCalendar(currentDate);
+            updateHolidayList();
+        }
+
+        function updateStateDisplay() {
+            const stateDisplay = document.getElementById('current-state');
+            stateDisplay.textContent = currentState 
+                ? `State: ${currentState}` 
+                : 'National Holidays Only';
+        }
+
+        function getStateHolidays() {
+            return [
+                ...holidays.national,
+                ...(holidays.states[currentState] || [])
+            ];
+        }
+
+        function updateHolidayList() {
+            const list = document.getElementById('holiday-list');
+            list.innerHTML = getStateHolidays().map(holiday => `
+                <div class="flex items-center p-2 hover:bg-gray-50 rounded">
+                    <div class="w-2 h-2 ${getHolidayType(moment(holiday.date)) === 'national' ? 'bg-red-500' : 'bg-blue-500'} 
+                        rounded-full mr-3"></div>
+                    <div class="flex-1">
+                        <span class="font-medium">${holiday.name}</span>
+                        <span class="text-gray-500 text-sm ml-2">
+                            ${moment(holiday.date).format('MMM D, YYYY')}
+                            ${getHolidayType(moment(holiday.date)) === 'state' ? ` (${currentState})` : ''}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleView(view) {
+            document.getElementById('calendar-view').style.display = view === 'calendar' ? 'block' : 'none';
+            document.getElementById('list-view').style.display = view === 'list' ? 'block' : 'none';
+        }
+  </script>
+ </body>
+</html>
